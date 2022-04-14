@@ -11,11 +11,8 @@ import { Link } from "react-router-dom";
 import Address from "./pages/private/Address";
 import Login from "./pages/Login";
 import { RequirersAuth } from "./pages/RequiresAuth";
-import { useAuth } from "./context/auth-context";
 
 export default function App() {
-  const { login, toggleLogin } = useAuth();
-
   return (
     <div className="App">
       <nav>
@@ -24,9 +21,6 @@ export default function App() {
         <Link to="/cart">Cart </Link> ||
         <Link to="/wishlist">WishList </Link> ||
         <Link to="/address">Address </Link> ||
-        <button onClick={() => toggleLogin()}>
-          {login ? "logout" : "login"}{" "}
-        </button>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />

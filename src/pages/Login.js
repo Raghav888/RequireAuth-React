@@ -1,9 +1,15 @@
 import React from "react";
 
+import { useAuth } from "../context/auth-context";
+
 export default function Login() {
+  const { login, toggleLogin } = useAuth();
+
   return (
     <>
-      <h1> Chhabhi laaya kya? </h1>
+      <button onClick={() => toggleLogin()}>
+        {login ? "logout" : "login"}{" "}
+      </button>
     </>
   );
 }
