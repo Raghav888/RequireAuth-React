@@ -8,7 +8,7 @@ const AuthContextProvider = ({ children }) => {
   let location = useLocation();
   const toggleLogin = () => {
     setlogin((login) => !login);
-    navigate(location?.state?.from?.pathname);
+    navigate(location?.state?.from?.pathname, { replace: true });
   };
   return (
     <AuthContext.Provider value={{ login, toggleLogin }}>
